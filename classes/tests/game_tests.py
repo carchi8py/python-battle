@@ -10,7 +10,7 @@ if BASE_DIR not in sys.path:
 import game
 
 class TestPerson(unittest.TestCase):
-    def testSetPerson(self):
+    def test_set_person(self):
         hp = random.randint(1, 100)
         mp = random.randint(1, 100)
         atk = random.randint(1, 100)
