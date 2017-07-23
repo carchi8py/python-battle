@@ -2,3 +2,4 @@
 .scannerwork/
 .coverage
 coverage.xml
+classes/__pycache__/
