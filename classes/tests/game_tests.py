@@ -65,6 +65,63 @@ class TestTakeDamage(unittest.TestCase):
         new_hp = person.take_damage(rand_int)
         self.assertEqual(0,new_hp)
 
+class TestGetHp(unittest.TestCase):
+    def test_get_hp(self):
+        rand_int = random.randint(1, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(rand_int, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(rand_int, person.get_hp())
+
+class TestGetMaxHp(unittest.TestCase):
+    def test_get_max_hp(self):
+        rand_int = random.randint(1, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(rand_int, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(rand_int, person.get_max_hp())
+
+class TestGetMp(unittest.TestCase):
+    def test_get_mp(self):
+        rand_int = random.randint(1, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(rand_int, person.get_mp())
+
+class TestGetMaxMp(unittest.TestCase):
+    def test_get_max_mp(self):
+        rand_int = random.randint(1, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(rand_int, person.get_max_mp())
+
+class TestReduceMp(unittest.TestCase):
+    def test_reduce_mp(self):
+        rand_int = random.randint(40, 100)
+        spell_cost = random.randint(10,15)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        person.reduce_mp(spell_cost)
+        self.assertEqual(person.get_mp(), rand_int - spell_cost)
+
+class GetSpellName(unittest.TestCase):
+    def test_get_spell_name(self):
+        rand_int = random.randint(1, 100)
+        spell = random.randint(0,2)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60},
+         {"name": "Thunder", "cost": 10, "dmg": 80},
+         {"name": "Blizzard", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(magic[spell]["name"], person.get_spell_name(spell))
+
+class getSpellCost(unittest.TestCase):
+    def test_get_spell_cost(self):
+        rand_int = random.randint(1, 100)
+        spell = random.randint(0,2)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60},
+         {"name": "Thunder", "cost": 10, "dmg": 80},
+         {"name": "Blizzard", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        self.assertEqual(magic[spell]["cost"], person.get_spell_mp_cost(spell))
+
 
 
 if __name__=="__main__":
