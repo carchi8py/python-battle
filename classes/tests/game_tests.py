@@ -112,7 +112,7 @@ class GetSpellName(unittest.TestCase):
         person = game.Person(200, rand_int, rand_int, rand_int, magic)
         self.assertEqual(magic[spell]["name"], person.get_spell_name(spell))
 
-class getSpellCost(unittest.TestCase):
+class GetSpellCost(unittest.TestCase):
     def test_get_spell_cost(self):
         rand_int = random.randint(1, 100)
         spell = random.randint(0,2)
