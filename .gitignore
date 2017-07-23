@@ -1,2 +1,4 @@
 .idea/
 .scannerwork/
+.coverage
+coverage.xml
