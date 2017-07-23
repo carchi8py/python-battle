@@ -51,6 +51,20 @@ class TestGenerateSpellDamage(unittest.TestCase):
         self.assertLess(spell2,86)
         self.assertGreater(spell2, 74)
 
+class TestTakeDamage(unittest.TestCase):
+    def test_take_damage(self):
+        rand_int = random.randint(1, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(200, rand_int, rand_int, rand_int, magic)
+        new_hp = person.take_damage(rand_int)
+        self.assertEqual(200-rand_int,new_hp)
+    def test_if_zero(self):
+        rand_int = random.randint(10, 100)
+        magic = [{"name": "Fire", "cost": 10, "dmg": 60}]
+        person = game.Person(5, rand_int, rand_int, rand_int, magic)
+        new_hp = person.take_damage(rand_int)
+        self.assertEqual(0,new_hp)
+
 
 
 if __name__=="__main__":
