@@ -26,4 +26,4 @@ while running:
     enemy_choice = 1
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
-    print("Enemy attacks for", enemy_dmg, "Player HP", player.get_hp()11)
+    print("Enemy attacks for", enemy_dmg, "Player HP", player.get_hp())
