@@ -37,20 +37,6 @@ class TestGenerateDamage(unittest.TestCase):
         self.assertLess(damage, rand_int+11)
         self.assertGreater(damage, rand_int-11)
 
-class TestGenerateSpellDamage(unittest.TestCase):
-    def test_generate_spell_damage(self):
-        rand_int = random.randint(1, 100)
-        magic = [{"name": "Fire", "cost": 10, "dmg": 60},
-         {"name": "Thunder", "cost": 10, "dmg": 80}]
-        person = game.Person(rand_int, rand_int, rand_int, rand_int, magic)
-        spell1 = person.generate_spell_damage(0)
-        spell2 = person.generate_spell_damage(1)
-
-        self.assertLess(spell1,66)
-        self.assertGreater(spell1, 54)
-        self.assertLess(spell2,86)
-        self.assertGreater(spell2, 74)
-
 class TestTakeDamage(unittest.TestCase):
     def test_take_damage(self):
         rand_int = random.randint(1, 100)
@@ -101,26 +87,6 @@ class TestReduceMp(unittest.TestCase):
         person = game.Person(200, rand_int, rand_int, rand_int, magic)
         person.reduce_mp(spell_cost)
         self.assertEqual(person.get_mp(), rand_int - spell_cost)
-
-class GetSpellName(unittest.TestCase):
-    def test_get_spell_name(self):
-        rand_int = random.randint(1, 100)
-        spell = random.randint(0,2)
-        magic = [{"name": "Fire", "cost": 10, "dmg": 60},
-         {"name": "Thunder", "cost": 10, "dmg": 80},
-         {"name": "Blizzard", "cost": 10, "dmg": 60}]
-        person = game.Person(200, rand_int, rand_int, rand_int, magic)
-        self.assertEqual(magic[spell]["name"], person.get_spell_name(spell))
-
-class GetSpellCost(unittest.TestCase):
-    def test_get_spell_cost(self):
-        rand_int = random.randint(1, 100)
-        spell = random.randint(0,2)
-        magic = [{"name": "Fire", "cost": 10, "dmg": 60},
-         {"name": "Thunder", "cost": 10, "dmg": 80},
-         {"name": "Blizzard", "cost": 10, "dmg": 60}]
-        person = game.Person(200, rand_int, rand_int, rand_int, magic)
-        self.assertEqual(magic[spell]["cost"], person.get_spell_mp_cost(spell))
 
 
 
