@@ -1,5 +1,6 @@
 from classes.game import Person, Bcolors
 from classes.magic import Spell
+from classes.inventory import Item
 
 #black magic
 fire = Spell("Fire", 10, 100, "black")
@@ -12,9 +13,21 @@ quake = Spell("quake", 14, 140, "black")
 cure = Spell("Cure", 12, 120, "white")
 cura = Spell("Cura", 18, 200, "white")
 
+#Create some items
+potion = Item("Potion", "potion", "Heals 50 HP", 50)
+hipotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
+superpotion = Item("Super Potion", "potion", "Heals 500 HP", 500)
+elixer = Item("Elixer", "elixer", "Fully restores HP/MP of one party member", 9999)
+megaelixer = Item("MegaElixer", "elixer", "Fully restores all party's HP/MP", 9999)
+grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
+
+
+player_magic = [fire, thunder, blizzard, meteor, cure, cura]
+player_item = [potion, hipotion, superpotion, elixer, megaelixer, grenade]
+
 #Instantiate People
-player = Person(460, 65, 60, 34, [fire, thunder, blizzard, meteor, cure, cura])
-enemy = Person(1200, 65, 45, 25, [])
+player = Person(460, 65, 60, 34, player_magic, player_item)
+enemy = Person(1200, 65, 45, 25, [], [])
 
 running = True
 
@@ -51,6 +64,9 @@ while running:
         elif spell.type == "black":
             enemy.take_damage(magic_dmg)
             print(Bcolors.OKGREEN + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + Bcolors.ENDC)
+    elif choice == 2:
+        player.choose_item()
+        item_choice = int(input("Choose item: ")) - 1
 
     enemy_choice = 1
     enemy_dmg = enemy.generate_damage()
