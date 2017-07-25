@@ -1,5 +1,13 @@
 import random
-from magic import Spell
+import os
+import sys
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
+from classes.magic import Spell
 
 class Bcolors:
     HEADER = '\033[95m'
