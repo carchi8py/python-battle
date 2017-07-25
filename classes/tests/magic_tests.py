@@ -21,10 +21,10 @@ class SetMagic(unittest.TestCase):
 class TestGenerateSpellDamage(unittest.TestCase):
     def test_generate_spell_damage(self):
         rand_int = random.randint(1, 100)
-        blizzard = Spell("blizzard", 10, 100, "black")
+        blizzard = Spell("blizzard", 10, rand_int, "black")
         dmg = blizzard.generate_damage()
-        self.assertLess(100 - 16, dmg)
-        self.assertGreater(100 + 16, dmg)
+        self.assertLess(rand_int - 16, dmg)
+        self.assertGreater(rand_int + 16, dmg)
 
 if __name__=="__main__":
     unittest.main()
