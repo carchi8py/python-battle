@@ -48,7 +48,7 @@ while running:
         if spell.type == "white":
             player.heal(magic_dmg)
             print(Bcolors.OKBLUE + "\n" + spell.name + " heals for", str(magic_dmg), "HP." + Bcolors.ENDC)
-        elif:
+        elif spell.type == "black":
             enemy.take_damage(magic_dmg)
             print(Bcolors.OKGREEN + "\n" + spell.name + " deals", str(magic_dmg), "points of damage" + Bcolors.ENDC)
 
