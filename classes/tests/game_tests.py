@@ -56,8 +56,8 @@ class TestHeal(unittest.TestCase):
         random_int = random.randint(10, 100)
         person = game.Person(300, 0, 0, 0, [])
         person.take_damage(200)
-        newHP = person.heal(random_int)
-        self.assertEqual(newHP, 100 + random_int)
+        new_hp = person.heal(random_int)
+        self.assertEqual(new_hp, 100 + random_int)
 
 class TestGetHp(unittest.TestCase):
     def test_get_hp(self):
