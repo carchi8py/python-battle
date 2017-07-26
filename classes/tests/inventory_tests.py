@@ -16,3 +16,6 @@ class SetItem(unittest.TestCase):
         self.assertEqual("potion", potion.type)
         self.assertEqual("Heals 50 HP", potion.description)
         self.assertEqual(50, potion.prop)
+
+if __name__=="__main__":
+    unittest.main()
