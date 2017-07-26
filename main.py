@@ -23,7 +23,12 @@ grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
 
 
 player_magic = [fire, thunder, blizzard, meteor, cure, cura]
-player_item = [potion, hipotion, superpotion, elixer, megaelixer, grenade]
+player_item = [{"item": potion, "quantity": 15},
+               {"item": hipotion, "quantity": 5},
+               {"item": superpotion, "quantity": 5},
+               {"item": elixer, "quantity": 5},
+               {"item": megaelixer, "quantity": 2},
+               {"item": grenade, "quantity": 5}]
 
 #Instantiate People
 player = Person(460, 65, 60, 34, player_magic, player_item)
@@ -73,7 +78,9 @@ while running:
         if item_choice == -1:
             continue
 
-        item = player.items[item_choice]
+        item = player.items[item_choice]["item"]
+        player.items[item_choice]["quantity"] -= 1
+
         if item.type == "potion":
             player.heal(item.prop)
             print(Bcolors.OKGREEN + "\n" + item.name + " heals for", str(item.prop), "HP" + Bcolors.ENDC)
