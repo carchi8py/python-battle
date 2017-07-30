@@ -3,20 +3,20 @@ from classes.magic import Spell
 from classes.inventory import Item
 
 #black magic
-fire = Spell("Fire", 10, 100, "black")
-thunder = Spell("thunder", 10, 100, "black")
-blizzard = Spell("blizzard", 10, 100, "black")
-meteor = Spell("meteor", 20, 200, "black")
+fire = Spell("Fire", 25, 600, "black")
+thunder = Spell("thunder", 25, 600, "black")
+blizzard = Spell("blizzard", 25, 600, "black")
+meteor = Spell("meteor", 40, 1200, "black")
 quake = Spell("quake", 14, 140, "black")
 
 #white magic
-cure = Spell("Cure", 12, 120, "white")
-cura = Spell("Cura", 18, 200, "white")
+cure = Spell("Cure", 25, 620, "white")
+cura = Spell("Cura", 35, 1500, "white")
 
 #Create some items
-potion = Item("Potion", "potion", "Heals 50 HP", 50)
-hipotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
-superpotion = Item("Super Potion", "potion", "Heals 500 HP", 500)
+potion = Item("Potion", "potion", "Heals 300 HP", 50)
+hipotion = Item("Hi-Potion", "potion", "Heals 500 HP", 100)
+superpotion = Item("Super Potion", "potion", "Heals 100 HP", 500)
 elixer = Item("Elixer", "elixer", "Fully restores HP/MP of one party member", 9999)
 megaelixer = Item("MegaElixer", "elixer", "Fully restores all party's HP/MP", 9999)
 grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
@@ -31,10 +31,10 @@ player_item = [{"item": potion, "quantity": 15},
                {"item": grenade, "quantity": 5}]
 
 #Instantiate People
-player1 = Person("Valos:", 3260, 65, 60, 34, player_magic, player_item)
-player2 = Person("Nick :", 4160, 65, 60, 34, player_magic, player_item)
-player3 = Person("Robot:", 4089, 65, 60, 34, player_magic, player_item)
-enemy = Person("Magus", 1200, 65, 45, 25, [], [])
+player1 = Person("Valos:", 3260, 132, 300, 34, player_magic, player_item)
+player2 = Person("Nick :", 4160, 188, 311, 34, player_magic, player_item)
+player3 = Person("Robot:", 4089, 174, 288, 34, player_magic, player_item)
+enemy = Person("Magus", 11200, 701, 550, 25, [], [])
 
 players = [player1, player2, player3]
 
@@ -45,7 +45,7 @@ print(Bcolors.FAIL + Bcolors.BOLD + "AN ENEMY ATTACKS!" + Bcolors.ENDC)
 while running:
     print("========================")
     print("\n\n")
-    print("NAME                     HP                                 MP")
+    print("NAME                     HP                                   MP")
     for player in players:
         player.get_stats()
     print('\n')
