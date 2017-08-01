@@ -100,6 +100,10 @@ while running:
                 player.heal(item.prop)
                 print(Bcolors.OKGREEN + "\n" + item.name + " heals for", str(item.prop), "HP" + Bcolors.ENDC)
             elif item.type == "elixer":
+                if item.name == "MegaElixer":
+                    for i in players:
+                        i.hp = i.maxhp
+                        i.mp = i.maxmp
                 player.hp = player.maxhp
                 player.mp = player.maxmp
                 print(Bcolors.OKGREEN + "\n" + item.name + " fully restores HP/MP" + Bcolors.ENDC)
