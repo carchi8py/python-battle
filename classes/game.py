@@ -85,6 +85,23 @@ class Person:
             print("        " + str(i) + "." + item["item"].name, ":", item["item"].description, " (x" + str(item["quantity"]) + ")")
             i += 1
 
+    def get_enemy_stats(self):
+        hp_bar = ""
+        bar_ticks = (self.hp / self.maxhp) * 100 / 2
+        while bar_ticks > 0:
+            hp_bar += "█"
+            bar_ticks -= 1
+        while len(hp_bar) < 50:
+            hp_bar += " "
+        chp = str(self.hp)
+        while len(chp) < 5:
+            chp = " " + chp
+
+        print("                          __________________________________________________ ")
+        print(Bcolors.BOLD + self.name + "        " +
+              str(chp) + "/" + str(self.maxhp) + " |" + Bcolors.OKGREEN + hp_bar + Bcolors.ENDC + Bcolors.BOLD + "|  ")
+
+
     def get_stats(self):
         hp_bar = ""
         bar_ticks = (self.hp / self.maxhp) * 100 / 4
