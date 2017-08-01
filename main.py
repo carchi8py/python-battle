@@ -2,6 +2,8 @@ from classes.game import Person, Bcolors
 from classes.magic import Spell
 from classes.inventory import Item
 
+import random
+
 #black magic
 fire = Spell("Fire", 25, 600, "black")
 thunder = Spell("thunder", 25, 600, "black")
@@ -113,11 +115,10 @@ while running:
 
 
     enemy_choice = 1
+    target = random.randrange(0,len(players))
     enemy_dmg = enemy.generate_damage()
-    player1.take_damage(enemy_dmg)
+    players[target].take_damage(enemy_dmg)
     print("Enemy attacks for", enemy_dmg)
-    print("-----------------------------")
-    print("Enemy HP:", Bcolors.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + Bcolors.ENDC + "\n")
     #check if someone has died
     if enemy.get_hp() == 0:
         print(Bcolors.OKGREEN + "You win" + Bcolors.ENDC)
