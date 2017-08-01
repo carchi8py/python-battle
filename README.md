@@ -2,7 +2,7 @@
 
 This is a simple RPG Battle
 
-[![Quality Gate](https://onarcloud.io/api/badges/gate?key=carchi8py%3ApythonBattle)](https://sonarcloud.io/dashboard?id=carchi8py%3ApythonBattle)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=carchi8py%3ApythonBattle)](https://sonarcloud.io/dashboard?id=carchi8py%3ApythonBattle)
 
 ## Getting Started
 
