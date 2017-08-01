@@ -97,9 +97,9 @@ class Person:
         while len(chp) < 5:
             chp = " " + chp
 
-        print("                          __________________________________________________ ")
-        print(Bcolors.BOLD + self.name + "        " +
-              str(chp) + "/" + str(self.maxhp) + " |" + Bcolors.OKGREEN + hp_bar + Bcolors.ENDC + Bcolors.BOLD + "|  ")
+        print("                       __________________________________________________ ")
+        print(Bcolors.BOLD + self.name + "     " +
+              str(chp) + "/" + str(self.maxhp) + " |" + Bcolors.FAIL + hp_bar + Bcolors.ENDC + Bcolors.BOLD + "|  ")
 
 
     def get_stats(self):
